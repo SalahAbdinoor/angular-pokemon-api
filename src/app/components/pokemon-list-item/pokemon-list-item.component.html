@@ -1,0 +1,37 @@
+<li *ngIf="pokemon" class="my-16 p-0">
+  <div class="w-full mx-auto px-4">
+    <div class="relative m-0 shadow-lg flex bg-white rounded-2xl">
+      <img
+        src="../../../assets/images/nav-icon.png"
+        alt="Pokemon"
+        class="absolute top-4 right-4 h-10 w-10"
+        *ngIf="isCaptured"
+      />
+      <a
+        class="flex-no-shrink my-auto rounded-2xl cursor-pointer"
+        (click)="capturePokemonClick()"
+      >
+        <img
+          alt="{{ pokemonImage }}"
+          class="w-64 h-64 mx-2 ml-6 my-4 block shadow-2xl rounded-full bg-blue-500 hover:bg-red-500 duration-500"
+          src="{{ pokemonImage }}"
+        />
+      </a>
+      <div class="flex-1 card-block relative">
+        <div class="p-6">
+          <section>
+            <h2
+              style="color: #ffcb05"
+              class="font-medium text-center text-6xl mb-3 left-5"
+            >
+              {{ pokemon.name }}
+            </h2>
+            <hr class="border-2 border-blue-500" />
+            <app-pokemon-data [pokemon]="pokemon" [pokemonId]="pokemonId">
+            </app-pokemon-data>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>

@@ -1,0 +1,78 @@
+<div
+  class="container px-4 text-sm text-white bg-blue-500 hover:bg-red-500 duration-500 rounded-xl w-full"
+>
+  <ng-container *ngIf="!show">
+    <a (click)="handleShowData()" class="text-center block p-2 show-more">
+      Show more...
+    </a>
+  </ng-container>
+
+  <ng-container *ngIf="show">
+    <ng-container *ngIf="data">
+      <div class="mx-auto cursor-default">
+        <div class="grid grid-cols-2 gap-4 mt-12 py-4 text-center">
+          <div class="w-full shadow-xl rounded-xl bg-yellow-400">
+            <div class="container">
+              <h1 class="text-3xl mb-3">Abilities</h1>
+              <ul *ngFor="let ability of data.abilities" class="px-2">
+                <li>{{ ability.ability.name }}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-full shadow-xl rounded-xl bg-red-300">
+            <div class="container">
+              <h1 class="text-3xl mb-3">Types</h1>
+              <ul *ngFor="let type of data.types" class="px-2">
+                <li>{{ type.type.name }}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-full shadow-xl rounded-xl bg-green-300">
+            <div class="container">
+              <h1 class="text-3xl mb-3">Stats</h1>
+              <ul *ngFor="let stat of data.stats" class="px-2">
+                <li>
+                  <strong class="font-bold pl-5">{{ stat.stat.name }}: </strong>
+                  {{ stat.base_stat }}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-full shadow-xl rounded-xl bg-indigo-300">
+            <div class="container">
+              <h1 class="text-3xl mb-3">Misc</h1>
+              <ul>
+                <li class="px-2">
+                  <strong class="font-bold pl-5">Base Experience: </strong>
+                  {{ data.base_experience }}
+                </li>
+                <li class="px-2">
+                  <strong class="font-bold pl-5">Height: </strong>
+                  {{ data.height }}
+                </li>
+                <li class="px-2">
+                  <strong class="font-bold pl-5">Weight: </strong>
+                  {{ data.weight }}
+                </li>
+
+                <li *ngFor="let item of data.held_items" class="px-2">
+                  <strong class="font-bold pl-5">Held Item: </strong>
+
+                  {{ item.item.name }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <a
+      (click)="handleShowData()"
+      class="text-sm text-center text-white hover:bg-blue-500 bg-red-500 duration-500 rounded-full block p-2 mt-6 show-more"
+    >
+      Show less...
+    </a>
+    <br />
+  </ng-container>
+</div>

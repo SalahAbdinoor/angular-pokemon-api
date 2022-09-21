@@ -1,0 +1,16 @@
+.bg-btn {
+  background-color: white;
+}
+
+.bg-btn:hover {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+.bg-btn:active {
+  -webkit-filter: blur();
+  filter: blur();
+}
+
+.bg-main {
+  background-color: #3268b0;
+}

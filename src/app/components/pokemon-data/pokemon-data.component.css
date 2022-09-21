@@ -1,0 +1,8 @@
+.show-more:hover {
+  cursor: pointer;
+}
+
+.container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
